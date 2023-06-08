@@ -11,15 +11,15 @@
     {#if !visible}
         <h2>hit the button to learn more!</h2>
         <button on:click={toggleVis}>click me!</button>
-    {/if}
-    {#if visible}
+    {:else}
         <h2>panko a. cat</h2>
-        <h4>@fatfatpankocat</h4>
+        <a target="_blank" href="https://www.instagram.com/fatfatpankocat/?hl=en"><h4>@fatfatpankocat</h4></a>
         <img src="{src}" alt="picture of panko the cat"/>
         <p>panko a. cat is a cat influencer popular on instagram for her wonderful pictures and her spectacular hula hoop tricks. she has a masters degree in cat engineering from carnegie mellon university. please follow her on instagram and twitter.</p>
-        <button on:click={toggleVis}>click me to unlearn info :(</button>
+        <button on:click={toggleVis}>click to unlearn :(</button>
     {/if}
 </div>
+
 
 <style>
     

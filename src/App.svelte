@@ -1,7 +1,6 @@
 <script>
 	export let name;
 	import Card from "./card.svelte"
-	
 </script>
 
 <main>
@@ -18,8 +17,11 @@
 		<Card></Card>
 		</div>
 	</section>
-	
 </main>
+
+<footer>
+	<p> i hope u have a great day :D </p>
+</footer>
 
 <style>
 	main {
@@ -76,6 +78,13 @@
 		box-shadow: 4px 8px 16px rgb(105, 97, 87);
 		padding: 16px;
 		border-radius: 24px;
+	}
+
+	footer {
+		text-align: center;
+		background-color: white;
+		padding: 16px 16px 32px;
+		margin: 24px;
 	}
 	
 </style>
