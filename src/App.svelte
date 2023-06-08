@@ -1,11 +1,7 @@
 <script>
 	export let name;
-	let visible = false;
-	let src = "https://images-na.ssl-images-amazon.com/images/S/influencer-profile-image-prod/logo/influencer-aa8cfdaf_1646419621336_original._CR32,0,1196,1196_._FMjpg_.jpeg";
-
-	function toggleVis(){
-		visible = !visible;
-	}
+	import Card from "./card.svelte"
+	
 </script>
 
 <main>
@@ -14,21 +10,12 @@
 		<a href="">Discover</a>
 		<a href="">About Us</a>
 	</nav>
-	<h1>Hello {name}!</h1>
-	
+	<section class="header">
+		<h1>Hello {name}!</h1>
+	</section>
 	<section id="panko">
-		<div class="card">
-			{#if !visible}
-				<h2>hit the button to learn more!</h2>
-				<button on:click={toggleVis}>click me!</button>
-			{/if}
-			{#if visible}
-				<h2>panko a. cat</h2>
-				<h4>@fatfatpankocat</h4>
-				<img src="{src}" alt="picture of panko the cat"/>
-				<p>panko a. cat is a cat influencer popular on instagram for her wonderful pictures and her spectacular hula hoop tricks. she has a masters degree in cat engineering from carnegie mellon university. please follow her on instagram and twitter.</p>
-				<button on:click={toggleVis}>click me to unlearn info :(</button>
-			{/if}
+		<div>
+		<Card></Card>
 		</div>
 	</section>
 	
@@ -37,8 +24,7 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		padding: 0;	
 		margin: 0 auto;
 		
 	}
@@ -50,30 +36,37 @@
 		font-weight: 100;
 	}
 
+	.header{
+		
+		display:grid;
+		place-items: center;
+	}
+
 	nav {
-		padding: 16px;
-		margin: 16px;
+		position: fixed;
+		text-align: left;
+		width: 100%;
+		padding: 16px 16px 20px 24px;
+		margin: 0;
 		background-color: rgb(255, 248, 238);
 	}
 	
 	nav a {
 		color: navy;
 		background-color: rgb(255, 248, 238);
-		margin: 16px 0 0 16px;
+		padding: 16px;
+	}
+	nav a:hover {
+		background-color: rgb(236, 199, 103);
+		padding: 16px;
 	}
 	
 	a:hover{
-		color:blueviolet;
+		color:white;
 	}
-	
-	img {
-		max-width: 400px;
-		border-radius: 16px;
-		object-fit:cover;
-	}
-	
+
 	#panko{
-		max-width: 700px;
+		width: 60%;
 		margin: auto;
 	}
 	
@@ -85,31 +78,4 @@
 		border-radius: 24px;
 	}
 	
-	h2, h4 {
-		padding: 0px;
-		margin: 8px;
-	}
-	
-	h4 {
-		color: rgb(101, 81, 77);
-	}
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-
-	button{
-		background-color: rgb(236, 199, 103);
-		border-color: rgb(236, 199, 103);
-		color:rgb(87, 70, 50);
-		border-radius: 8px;
-		padding: 8px 12px 8px 12px;
-	}
-	
-	button:hover {
-		background-color: rgb(90, 82, 72);
-		border-color: rgb(90, 82, 72);
-		color:white;
-	}
 </style>
